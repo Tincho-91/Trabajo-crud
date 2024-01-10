@@ -35,7 +35,7 @@ const controller = {
 		res.render("product-create-form", {productCreateForm})
 	},
 	
-	// Create -  Method to store
+	// Create -  Method to storem
 	store: (req, res) => {
 		const producto = req.body;
 		producto.id = Date.now();

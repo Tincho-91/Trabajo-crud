@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Formulario de creación'}) %>
+
+<body class="body-form-create-users">
+    <%- include('partials/headerNavbar') %>
+
+
+    <form class="form-create-users" action="/users/create" method="POST">
+        <section class="cuadrado_bordes">
+        <h2 class="titulo_cuenta">Crear cuenta</h2>
+        <h2 class="descripcion_cuenta">Comprá más rápido y lleva el control de tus compras</h2>
+        <section class="formulario_section">
+            <div class="nombre_div">
+            <p>
+            <label class="form-label" for="nombre" >Nombre</label>
+            </p>
+            <input class="form-input-users" id="cuadro_texto" type="text" name="nombre">
+            </div>
+
+            <div class="apellido_div">
+            <p>
+            <label class="form-label" for="apellido" >Apellido</label>
+            </p>
+             <input class="form-input-users" id="cuadro_texto" type="text" name="apellido">
+            </div>
+            
+            <div class="email_div">
+            <p>
+            <label class="form-label" for="email">Email</label>
+            </p>
+            <input class="form-input-users" id="cuadro_texto" type="email" name="email">
+            </div>
+        
+            <div class="telefono_div">
+            <p>
+            <label class="form-label" for="telefono">Teléfono (opcional)</label>
+            </p>
+            <input class="form-input-users" id="cuadro_texto" type="text" name="telefono">
+            </div>
+        
+            <div class="form-label" class="contraseña_div">
+            <p>
+            <label for="contraseña">Contraseña</label>
+            </p>
+            <input class="form-input-users" id="cuadro_texto" type="password" name="contraseña">
+            </div>
+        </section>
+            <div class="boton_registro_div">
+            <a href=""><input class="buy-now-button" id="boton_enviar" type="submit" value="Registrarse"></a>
+            </div>
+            <div class="abajo_formulario">
+                <h2 class="formulario_pregunta">¿Ya tenés una cuenta? |</h2>
+                <h2><a href="" class="inicia_sesion">Inicia sesión</a></h2>
+            </div>
+        </section>
+    </form>
+
+
+
+
+
+
+    <%- include('partials/footer') %>
+</body>
