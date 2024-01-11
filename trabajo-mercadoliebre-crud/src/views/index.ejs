@@ -26,7 +26,7 @@
 							<img src="/images/products/<%= producto.image %>" alt="imagen de <%= producto.name %>">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= producto.discount > 0 ? toThousand(producto.price - ((producto.price * producto.discount) / 100)) : toThousand(producto.price) %></h2>
+							<h2> $ <%= producto.discount > 0 ? toThousand(producto.price - ((producto.price * producto.discount) / 100)) : toThousand(producto.price) %></h2>
 							<span><%= producto.discount > 0 ? producto.discount + "% OFF" : null %></span>
 							<p><%= producto.name %></p>
 							<i class="fas fa-truck"></i>
@@ -54,7 +54,7 @@
 								<img src="/images/products/<%= producto.image %>" alt="imagen de <%= producto.name %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= producto.discount > 0 ? toThousand(producto.price - ((producto.price * producto.discount) / 100)) : toThousand(producto.price) %></h2>
+								<h2> $ <%= producto.discount > 0 ? toThousand(producto.price - ((producto.price * producto.discount) / 100)) : toThousand(producto.price) %></h2>
 								<span><%= producto.discount > 0 ? producto.discount + "% OFF" : null %></span>
 								<p><%= producto.name %></p>
 								<i class="fas fa-truck"></i>

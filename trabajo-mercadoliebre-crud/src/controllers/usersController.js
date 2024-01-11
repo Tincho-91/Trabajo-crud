@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
+const {validationResult} = require("express-validator")
 
 
 
@@ -19,6 +20,8 @@ create: (req, res) => {
 
 // Create -  Method to storem
 store: (req, res) => {
+    let errors = validationResult(req);
+    if(errors.isEmpty()) {
     const user = req.body;
     user.id = Date.now();
     const users = getjson();
@@ -28,7 +31,12 @@ store: (req, res) => {
     const json= JSON.stringify(users);
     fs.writeFileSync(usersFilePath,json, "utf-8");
     res.redirect(`/`);
+} else {
+    res.render("users-create-form",{
+        errors: errors.array(),
+        old:req.body
+    })
 }
-}
+}}
 
 module.exports = controller;

@@ -12,39 +12,47 @@
         <h2 class="titulo_cuenta">Crear cuenta</h2>
         <h2 class="descripcion_cuenta">Comprá más rápido y lleva el control de tus compras</h2>
         <section class="formulario_section">
-            <div class="nombre_div">
+           
+            <% if (locals.errors) {
+             errors.forEach(error =>{ %>
+                <h3 class="msg-users-create"><%= error.msg %></h3>
+                <%})
+             }
+             %>
+
+             <div class="nombre_div">
             <p>
             <label class="form-label" for="nombre" >Nombre</label>
             </p>
-            <input class="form-input-users" id="cuadro_texto" type="text" name="nombre">
+            <input class="form-input-users" id="cuadro_texto" type="text" name="nombre" value="<%= locals.old && old.nombre ? old.nombre : "" %>">
             </div>
 
             <div class="apellido_div">
             <p>
             <label class="form-label" for="apellido" >Apellido</label>
             </p>
-             <input class="form-input-users" id="cuadro_texto" type="text" name="apellido">
+             <input class="form-input-users" id="cuadro_texto" type="text" name="apellido" value="<%= locals.old && old.apellido ? old.apellido : "" %>">
             </div>
             
             <div class="email_div">
             <p>
             <label class="form-label" for="email">Email</label>
             </p>
-            <input class="form-input-users" id="cuadro_texto" type="email" name="email">
+            <input class="form-input-users" id="cuadro_texto" type="email" name="email" value="<%= locals.old && old.email ? old.email : "" %>">
             </div>
         
             <div class="telefono_div">
             <p>
-            <label class="form-label" for="telefono">Teléfono (opcional)</label>
+            <label class="form-label" for="telefono">Teléfono</label>
             </p>
-            <input class="form-input-users" id="cuadro_texto" type="text" name="telefono">
+            <input class="form-input-users" id="cuadro_texto" type="text" name="telefono" value="<%= locals.old && old.telefono ? old.telefono : "" %>">
             </div>
         
             <div class="form-label" class="contraseña_div">
             <p>
             <label for="contraseña">Contraseña</label>
             </p>
-            <input class="form-input-users" id="cuadro_texto" type="password" name="contraseña">
+            <input class="form-input-users" id="cuadro_texto" type="password" name="contraseña" value="<%= locals.old && old.contraseña ? old.contraseña : "" %>">
             </div>
         </section>
             <div class="boton_registro_div">
